@@ -1,0 +1,10 @@
+apache-airflow==2.2.2
+apache-airflow-providers-ftp==2.1.2
+apache-airflow-providers-http==2.1.2
+apache-airflow-providers-imap==2.2.3
+apache-airflow-providers-sqlite==2.1.3
+numpy==1.23.1
+pandas @ file:///tmp/build/80754af9/pandas_1602088120436/work
+requests==2.27.1
+requests-oauthlib==1.3.0
+logging

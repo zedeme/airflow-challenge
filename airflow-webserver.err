@@ -1,0 +1,59 @@
+Traceback (most recent call last):
+  File "/home/zedeme/anaconda3/lib/python3.8/site-packages/psutil/_common.py", line 449, in wrapper
+    ret = self._cache[fun]
+AttributeError: _cache
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zedeme/anaconda3/lib/python3.8/site-packages/psutil/_pslinux.py", line 1515, in wrapper
+    return fun(self, *args, **kwargs)
+  File "/home/zedeme/anaconda3/lib/python3.8/site-packages/psutil/_common.py", line 452, in wrapper
+    return fun(self)
+  File "/home/zedeme/anaconda3/lib/python3.8/site-packages/psutil/_pslinux.py", line 1557, in _parse_stat_file
+    with open_binary("%s/%s/stat" % (self._procfs_path, self.pid)) as f:
+  File "/home/zedeme/anaconda3/lib/python3.8/site-packages/psutil/_common.py", line 713, in open_binary
+    return open(fname, "rb", **kwargs)
+FileNotFoundError: [Errno 2] No such file or directory: '/proc/159722/stat'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zedeme/anaconda3/lib/python3.8/site-packages/psutil/__init__.py", line 371, in _init
+    self.create_time()
+  File "/home/zedeme/anaconda3/lib/python3.8/site-packages/psutil/__init__.py", line 727, in create_time
+    self._create_time = self._proc.create_time()
+  File "/home/zedeme/anaconda3/lib/python3.8/site-packages/psutil/_pslinux.py", line 1515, in wrapper
+    return fun(self, *args, **kwargs)
+  File "/home/zedeme/anaconda3/lib/python3.8/site-packages/psutil/_pslinux.py", line 1727, in create_time
+    ctime = float(self._parse_stat_file()['create_time'])
+  File "/home/zedeme/anaconda3/lib/python3.8/site-packages/psutil/_pslinux.py", line 1522, in wrapper
+    raise NoSuchProcess(self.pid, self._name)
+psutil.NoSuchProcess: psutil.NoSuchProcess process no longer exists (pid=159722)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zedeme/anaconda3/bin/airflow", line 8, in <module>
+    sys.exit(main())
+  File "/home/zedeme/anaconda3/lib/python3.8/site-packages/airflow/__main__.py", line 48, in main
+    args.func(args)
+  File "/home/zedeme/anaconda3/lib/python3.8/site-packages/airflow/cli/cli_parser.py", line 48, in command
+    return func(*args, **kwargs)
+  File "/home/zedeme/anaconda3/lib/python3.8/site-packages/airflow/utils/cli.py", line 92, in wrapper
+    return f(*args, **kwargs)
+  File "/home/zedeme/anaconda3/lib/python3.8/site-packages/airflow/cli/commands/webserver_command.py", line 482, in webserver
+    monitor_gunicorn(gunicorn_master_proc.pid)
+  File "/home/zedeme/anaconda3/lib/python3.8/site-packages/airflow/cli/commands/webserver_command.py", line 447, in monitor_gunicorn
+    GunicornMonitor(
+  File "/home/zedeme/anaconda3/lib/python3.8/site-packages/airflow/cli/commands/webserver_command.py", line 212, in start
+    self._check_workers()
+  File "/home/zedeme/anaconda3/lib/python3.8/site-packages/airflow/cli/commands/webserver_command.py", line 227, in _check_workers
+    num_ready_workers_running = self._get_num_ready_workers_running()
+  File "/home/zedeme/anaconda3/lib/python3.8/site-packages/airflow/cli/commands/webserver_command.py", line 131, in _get_num_ready_workers_running
+    workers = psutil.Process(self.gunicorn_master_proc.pid).children()
+  File "/home/zedeme/anaconda3/lib/python3.8/site-packages/psutil/__init__.py", line 343, in __init__
+    self._init(pid)
+  File "/home/zedeme/anaconda3/lib/python3.8/site-packages/psutil/__init__.py", line 384, in _init
+    raise NoSuchProcess(pid, None, msg)
+psutil.NoSuchProcess: psutil.NoSuchProcess no process found with pid 159722
