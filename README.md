@@ -9,4 +9,5 @@ Replace your ./dags/ directory
 ### **Important**
 This repository only contains ./dags/ directory. \
 The challenge its not so long so I writed all code on only one file. \
-The dataset its not big so I dont used MapReduce.
+The dataset its not big so I dont used MapReduce. \
+Logging basic config is used because the challenge dont tell how want the config
