@@ -3,9 +3,8 @@
 ### Setup without Docker
 git clone https://github.com/zedeme/airflow-challenge.git \
 Replace your ./dags/ directory
-###### **Windows and Linux**
-`pip install -m requirements.txt` \
- \
+##### **Windows and Linux**
+`pip install -m requirements.txt`
 
 ### **Important**
 This repository only contains ./dags/ directory. \
